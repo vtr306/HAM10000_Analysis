@@ -14,7 +14,7 @@ clean:			## Clean unused files.
 	@rm -f .coverage
 	@rm -rf .mypy_cache
 	@rm -rf .pytest_cache
-	@rm -rf HAM10000 Analysis/*.egg-info
+	@rm -rf ham10000_codes/*.egg-info
 	@rm -rf htmlcov
 	@rm -rf docs/_build
 	@rm -rf docs/_static
@@ -27,18 +27,18 @@ install:		## Install in development mode.
 
 .PHONY: format
 format:			## Format code using isort and black
-	isort HAM10000 Analysis/
+	isort ham10000_codes/
 	isort tests/
-	black -l 110 HAM10000 Analysis/
+	black -l 110 ham10000_codes/
 	black -l 110 tests/
 
 
 .PHONY: lint
 lint:			## Run linters
-	flake8 HAM10000 Analysis/
-	black -l 110 --check HAM10000 Analysis/
+	flake8 ham10000_codes/
+	black -l 110 --check ham10000_codes/
 	black -l 110 --check tests/
-	mypy HAM10000 Analysis/
+	mypy ham10000_codes/
 
 
 .PHONY: test
@@ -50,6 +50,6 @@ test: lint		## Run tests and generate coverage report
 .PHONY: docs
 docs:			## Build documentation
 	@echo "Building documentation..."
-	pdoc HAM10000 Analysis -o docs
+	pdoc ham10000_codes -o docs
 	@echo "Serving API documentation..." 
-	pdoc HAM10000 Analysis --host localhost --port 8080
+	pdoc ham10000_codes --host localhost --port 8080

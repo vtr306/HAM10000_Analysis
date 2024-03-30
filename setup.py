@@ -23,13 +23,13 @@ def read_requirements(path: str) -> list[str]:
     return requirements
 
 setup(
-    name="HAM10000 Analysis",
+    name="ham10000_codes",
     author="Vitor Rosa",
     description="Enhancement, Extraction, Classification and Segmentation of HAM10000 Dataset",
     classifiers=[
         'License :: OSI Approved :: MIT License',
     ],
     packages=find_packages(exclude=["tests", ".github"]),
-    install_requires=read_requirements("HAM10000 Analysis/requirements.txt"),
-    extras_require={"test": read_requirements("HAM10000 Analysis/requirements-test.txt")},
+    install_requires=read_requirements("ham10000_codes/requirements.txt"),
+    extras_require={"test": read_requirements("ham10000_codes/requirements-test.txt")},
 )
