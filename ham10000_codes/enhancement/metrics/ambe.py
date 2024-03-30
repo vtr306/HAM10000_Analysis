@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-def absolute_mean_brightness_error(first_image: np.ndarray, second_image: np.ndarray) -> float:
+def ambe(first_image: np.ndarray, second_image: np.ndarray) -> float:
     """
     Calculate the Absolute Mean Brightness Error between two images.
 
@@ -22,5 +22,5 @@ def absolute_mean_brightness_error(first_image: np.ndarray, second_image: np.nda
 
 
     # Calculate the absolute mean brightness error
-    ambe = np.mean(np.abs(first_image - second_image))
-    return ambe
+    absolute_mean_brightness_error = np.mean(np.abs(first_image - second_image))
+    return absolute_mean_brightness_error

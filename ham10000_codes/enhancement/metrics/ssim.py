@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from skimage.metrics import structural_similarity as ssim
 
-def calculate_ssim(first_image: np.ndarray, second_image: np.ndarray) -> float:
+def ssim(first_image: np.ndarray, second_image: np.ndarray) -> float:
     """
     Calculate the Structural Similarity Index (SSIM) between two images.
 

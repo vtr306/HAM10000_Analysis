@@ -1,6 +1,6 @@
 import numpy as np
 
-def root_mean_squared_error(first_image: np.ndarray, second_image: np.ndarray) -> float:
+def rmse(first_image: np.ndarray, second_image: np.ndarray) -> float:
     """
     Calculate the root mean squared error between two numpy arrays.
 
@@ -15,5 +15,5 @@ def root_mean_squared_error(first_image: np.ndarray, second_image: np.ndarray) -
     if first_image.shape != second_image.shape:
         raise ValueError("Shapes of first_image and second_image must be the same.")
 
-    rmse = np.sort(np.mean((first_image - second_image) ** 2))
-    return rmse
+    root_mean_squared_error = np.sort(np.mean((first_image - second_image) ** 2))
+    return root_mean_squared_error
