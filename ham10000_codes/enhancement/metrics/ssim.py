@@ -17,11 +17,9 @@ def calculate_ssim(first_image: np.ndarray, second_image: np.ndarray) -> float:
     if first_image.shape != second_image.shape:
         raise ValueError("Shapes of first_image and second_image must be the same.")
 
-    # Convert images to grayscale using OpenCV
-    if len(first_image.shape) == 3:
-        first_image = cv2.cvtColor(first_image, cv2.COLOR_RGB2GRAY)
-    if len(second_image.shape) == 3:
-        second_image = cv2.cvtColor(second_image, cv2.COLOR_RGB2GRAY)
+    # Check if both images are in grayscale
+    if ((len(first_image.shape) != 2) or (len(second_image.shape) != 2)):
+        raise ValueError("Input images must be grayscale.")
 
     # Calculate SSIM
     ssim_value = ssim(first_image, second_image, data_range=first_image.max() - first_image.min())
